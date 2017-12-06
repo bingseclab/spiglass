@@ -52,22 +52,6 @@ You can now use the **SPIglass** enhanced Clang to compile executables you'd lik
 - `options` are the [set of options](https://clang.llvm.org/docs/CommandGuide/clang.html#options) available in mainstream Clang.
 - `input...` are your source files.
 
-### Adding New Entry Points to SPIglass
-In certain circumstances, it may be necessary to add entry points for SPIglass to properly protect a program. We discuss this in our paper in [Sections 5.4 and 6.3](paper.pdf). We have already added the entry points from Table 5.
-
-The following steps should be used if you would like to add a new entry point function for **SPIglass**:
-1. In [X86FrameLowering.cpp](./llvm-3.7.0-spi/lib/Target/X86/X86FrameLowering.cpp), add the following lines in function
-`void X86FrameLowering::createWrapper(MachineFunction &MF)` beginning at line 2105, where `EntryPointName` is the desired entry point function name:
-
-    ```C++
-    if ((MF.getName().str().compare("EntryPointName") == 0)) {
-    	saveStackPointer(MF);
-    	createAlignmentPoint(MF);
-    }
-    ```
-
-2. Rebuild and utilize **SPIglass** by following _Installation_, step 7.
-
 ### Using SPIglass with SPEC CPU2006
 
 1. If you have not already done so, perform the [SPEC CPU2006 Unix installation](https://www.spec.org/cpu2006/docs/install-guide-unix.html), steps 1-6. In particular, remember to source the directory using the `cshrc` or `shrc` script.
