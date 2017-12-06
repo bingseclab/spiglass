@@ -87,10 +87,8 @@ You can now use the **SPIglass** enhanced Clang to compile executables you'd lik
     ```
     
 # Paper
-**Supplementing Modern Software Defenses with Stack-Pointer Sanity** 
-
-Anh Quach, Matthew Cole and Aravind Prakash.
-Annual Computer Security Applications Conference (ACSAC'17), Orlando, FL, December 2017.
-
+**Supplementing Modern Software Defenses with Stack-Pointer Sanity**  
+Anh Quach, Matthew Cole and Aravind Prakash.  
+Annual Computer Security Applications Conference (ACSAC'17), Orlando, FL, December 2017.  
 [Full Paper](https://doi.org/10.1145/3134600.3134641)
 
